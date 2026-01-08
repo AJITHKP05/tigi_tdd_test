@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tigi_tdd_test/presentation/home/controller.dart';
+
+import 'controller.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

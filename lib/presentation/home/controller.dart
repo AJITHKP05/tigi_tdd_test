@@ -9,9 +9,11 @@ class HomeController extends GetxController {
     if (textController.text.isNotEmpty) {
       sum.value = 0;
       int tempSum = 0;
-      List<String> subValues = textController.text.split(",");
+      List<String> subValues = convertNonDigitsToComma(
+        textController.text,
+      ).split(",");
       for (final value in subValues) {
-        final number = int.tryParse(value.trim());
+        final number = int.tryParse((value).trim());
         if (number != null) {
           tempSum += number;
         }
@@ -20,5 +22,9 @@ class HomeController extends GetxController {
     } else {
       sum.value = 0;
     }
+  }
+
+  String convertNonDigitsToComma(String input) {
+    return input.replaceAll(RegExp(r'[^0-9]'), ',');
   }
 }
