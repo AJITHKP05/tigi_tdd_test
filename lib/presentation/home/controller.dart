@@ -30,7 +30,9 @@ class HomeController extends GetxController {
           if (number < 0) {
             negValues.add(number);
           }
-          tempSum += number;
+          if (number > 0 && number < 1000) {
+            tempSum += number;
+          }
         }
       }
       if (negValues.isNotEmpty) {

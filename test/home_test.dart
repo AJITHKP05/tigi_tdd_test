@@ -64,4 +64,14 @@ void main() {
     // Assert
     expect(homeController.sum.value, 0);
   });
+  test("should skips values greater than 1000", () {
+    // Arrange
+    homeController.textController.text = "//2,3000,1";
+
+    // Act
+    homeController.countString();
+
+    // Assert
+    expect(homeController.sum.value, 3);
+  });
 }
